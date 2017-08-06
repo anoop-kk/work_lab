@@ -34,6 +34,11 @@ Route::group(['middleware'=> ['auth','isadmin'],'namespace'=>'Admin'], function 
         'uses'=>'Suppliers@edit',
         'as'=>'create-edit',
     ]);
+    Route::delete('admin/supplier/destroy/{id}', 'Suppliers@destroy');
+//    Route::match(['get','post'],'admin/supplier/destroy/{id?}',[
+//        'uses'=>'Suppliers@destroy',
+//        'as'=>'supplier-destroy',
+//    ]);
 });
 Route::group(['middleware'=> ['auth','isemployee'],'namespace'=>'Employee'], function () {
     Route::get('employee/home', 'Home@index');

@@ -146,9 +146,15 @@ class Suppliers extends CoreWorkLabController {
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * Suppliers@destroy
      */
     public function destroy($id) {
-        //
+       $supplier = Supplier::find($id);
+       $status   = $supplier->delete();
+       if($status){
+        return response()->json(['success'=>true]);
+       }
+        return response()->json(['success'=>false]);
     }
 
 }

@@ -20,6 +20,7 @@
                     @if(count($suppliers))
                     <table class="table table-bordered table-hover">
                         <thead>
+                        <th>Sl no</th>
                         <th>Supplier Name</th>
                         <th>Address</th>
                         <th>Postal Code</th>
@@ -28,10 +29,11 @@
                         <tbody>
                             @foreach($suppliers as $supplier)
                             <tr>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$supplier->name}}</td>
                                 <td>{{$supplier->address}}</td>
                                 <td>{{$supplier->postal_code}}</td>
-                                <td><a href="{{url('#')}}" class="btn btn-primary" data-toggle="modal" data-target="#show" data-id="{{$supplier->id}}" data-name="{{$supplier->name}}" data-address="{{$supplier->address}}" data-postal_code="{{$supplier->postal_code}}"><i class="fa fa-edit"></i></a><a href="{{url('#')}}" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+                                <td><a href="{{url('#')}}" class="btn btn-primary" data-toggle="modal" data-target="#show" data-id="{{$supplier->id}}" data-name="{{$supplier->name}}" data-address="{{$supplier->address}}" data-postal_code="{{$supplier->postal_code}}"><i class="fa fa-edit"></i></a><a href="{{url('#')}}" class="btn btn-danger distroy" data-id="{{$supplier->id}}"><i class="fa fa-trash-o"></i></a></td>
                             </tr>
 
                             @endforeach

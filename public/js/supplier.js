@@ -109,5 +109,40 @@ $('#edit_supplier').submit(function (event) {
             }},
     });
 });
+$('.distroy').click(function () {
+    var btn     = $(this);
+    var row_id  = btn.data('id');
+    var url     = 'supplier/destroy/'+row_id;
+    var msg     = 'Successfully removed';
+    console.log(url); 
+    $.ajaxSetup({
+        headers: {'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')}
+    })
+    $.ajax({
+        url: url,
+        //headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        contentType: 'application/x-www-form-urlencoded',
+        type: 'DELETE',
+        contentType: false,
+        beforeSend: function () {
+            btn.text('Removing...');
+        },
+        success: function (response) {
+            if (response.success == true) {
+                var html = '<div class="col-md-12 msg-div"><div class="alert alert-success"><ul>';
+                html += '<li>' + msg + '</li>';
+                html += '</ul></div></div>';
+                btn.text('Removed');
+                btn.text();      
+                $('table').before(html);
+                location.reload();
+            } else {
 
-
+            }
+        },
+        timeout: 30000,
+        error: {function(xhr, status, error) {
+                alert(error);
+            }},
+    });
+});
