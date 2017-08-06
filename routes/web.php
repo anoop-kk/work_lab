@@ -25,6 +25,15 @@ Route::group(['middleware'=> ['auth','isadmin'],'namespace'=>'Admin'], function 
     Route::match(['post','get'],'admin/role','Home@role');
     Route::match(['post','get'],'admin/branches','Inventory@branches');
     Route::resource('admin/contacts','Contacts');
+    Route::resource('admin/suppliers','Suppliers');
+    Route::match(['get','post'],'admin/supplier/create',[
+        'uses'=>'Suppliers@create',
+        'as'=>'create-supplier',
+    ]);
+    Route::match(['get','post'],'admin/supplier/edit',[
+        'uses'=>'Suppliers@edit',
+        'as'=>'create-edit',
+    ]);
 });
 Route::group(['middleware'=> ['auth','isemployee'],'namespace'=>'Employee'], function () {
     Route::get('employee/home', 'Home@index');

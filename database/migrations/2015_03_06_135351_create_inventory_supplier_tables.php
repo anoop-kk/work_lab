@@ -12,7 +12,6 @@ class CreateInventorySupplierTables extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
 
             $table->string('name');
             $table->string('address')->nullable();
@@ -26,6 +25,7 @@ class CreateInventorySupplierTables extends Migration
             $table->string('contact_phone')->nullable();
             $table->string('contact_fax')->nullable();
             $table->string('contact_email')->nullable();
+            $table->timestamps();
         });
 
         Schema::create('inventory_suppliers', function (Blueprint $table) {

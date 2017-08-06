@@ -34,6 +34,18 @@
            
           </ul>
         </li>           
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-circle"></i> <span>@lang('menu.supplier')</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="{{url('admin/suppliers')}}"><i class="fa fa-user" aria-hidden="true"></i></i>@lang('menu.supplier')</a></li>
+           
+          </ul>
+        </li>           
              
       </ul>
     </section>

@@ -6,3 +6,4 @@
 {{ HTML::script('AdminLTE/plugins/iCheck/icheck.min.js') }}
 
 {{ HTML::script('AdminLTE/plugins/select2/select2.full.min.js') }}
+{{ HTML::script('AdminLTE/plugins/angular.min.js') }}

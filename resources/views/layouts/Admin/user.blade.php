@@ -1,7 +1,7 @@
 @include('layouts.Admin.header')
 @include('layouts.Admin.dashboard_style')
 @include('layouts.Admin.top_content')
-@include('layouts.Admin.side_bar')
+@include('layouts.Admin.side_bar_user')
 
 
 

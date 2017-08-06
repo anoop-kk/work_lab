@@ -17,8 +17,11 @@ return [
     'next' => 'Next &raquo;',
     'home' => 'Home',
     'dash_board' => 'Dash Board',
-    'assign_role' => 'Assign Role',
-    'role' => 'Roles and Permissions',
-    'supplier' => 'Suppliers',
+    'suppliers' => 'Suppliers',
+    'supplier_name' => 'Supplier Name',
+    'address' => 'Address',
+    'save' => 'Save',
+    'postal_code' => 'Postal Code',
+    
 
 ];
